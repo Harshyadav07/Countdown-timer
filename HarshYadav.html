@@ -1,0 +1,107 @@
+<DOCTYPE html>
+    <html>
+    <head>
+    <title>christmas Countdown</title>
+    <style>
+    body {
+    background: url(https://cdn.pixabay.com/photo/2017/10/26/19/45/red-2892235__480.png);
+    }
+    .countdownContainer{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    background: #ddd;
+    text-align: center;
+    border: 1px solid #999;
+    padding: 10px;
+    box-shadow: 0 0 5px 3px #ccc;
+    }
+    .text {
+    font-size: 80px;
+    }
+    .head {
+    color:white;
+    font-size: 60px;
+    text-align: center;
+    }
+    </style>
+    </head>
+    <body>
+    <h1 class="head"><i>christmas on 25<sup>th</sup> december</i></h1>
+    <table class="countdownContainer">
+    <tr class="text">
+    <td colspan="4">christmas Countdown</td>
+    </tr>
+    <tr>
+    <td>Days</td>
+    <td>Hours</td>
+    <td>Minutes</td>
+    <td>Seconds</td>
+    </tr>
+    <tr class="text">
+    <td id="days">100</td>
+    <td id="hours">5</td>
+    <td id="minutes">10</td>
+    <td id="seconds">10</td>
+    </tr>
+    </table>
+    
+    <script type="text/javascript">
+    function countdown() {
+    var now = new Date();
+    var eventDate = new Date(2021,12 , 25);
+    var currentTime = now.getTime();
+    var eventTime = eventDate.getTime();
+    var remTime = eventTime - currentTime;
+    
+    var s = Math.floor(remTime / 1000);
+    var m = Math.floor(s / 60);
+    var h = Math.floor(m / 60);
+    var d = Math.floor(h / 24);
+    
+    h %= 24;
+    m %= 60;
+    s %= 60;
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    document.getElementById("days").innerText = d;
+    document.getElementById("hours").innerText = h;
+    document.getElementById("minutes").textContent = m;
+    document.getElementById("seconds").textContent = s;
+    setTimeout(countdown, 1000);
+    }
+    countdown();
+    </script>
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
